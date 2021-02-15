@@ -28,21 +28,57 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
-
+    @IBOutlet weak var nameLabelCenterX: NSLayoutConstraint!
+    @IBOutlet weak var bountyLabelCenterX: NSLayoutConstraint!
     
     let viewModel = DetailViewModel()
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { // 뷰가 보여진 시점 X, 메모리에 올라옴
         super.viewDidLoad()
         updateUI()
+        prepareAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showanimation()
+    }
+    
+    private func prepareAnimation() { // 뷰 밖으로
+        nameLabelCenterX.constant = view.bounds.width
+        bountyLabelCenterX.constant = view.bounds.width
+    }
+    
+    private func showanimation() {
+        nameLabelCenterX.constant = 0
+        bountyLabelCenterX.constant = 0
+        
+//        UIView.animate(withDuration: 0.3) {
+//            self.view.layoutIfNeeded()
+//        }
+        
+//        UIView.animate(withDuration: 0.3,
+//                       delay: 0.1,
+//                       options: .curveEaseIn,
+//                       animations: {
+//                        self.view.layoutIfNeeded()
+//                       }, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, delay: 0.6, usingSpringWithDamping: 0.6, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        UIView.transition(with: imgView, duration: 0.3, options: .transitionFlipFromLeft, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     func updateUI() {
         if let bountyInfo = viewModel.bountyInfo {
             imgView.image = bountyInfo.image
             nameLabel.text = bountyInfo.name
-            bountyLabel.text = "\(bountyInfo)"
+            bountyLabel.text = "\(bountyInfo.bounty)"
         }
     }
     
