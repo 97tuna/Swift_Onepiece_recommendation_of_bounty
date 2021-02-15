@@ -126,7 +126,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsM-c0-z4F">
-                                <rect key="frame" x="105" y="683.66666666666663" width="180" height="36"/>
+                                <rect key="frame" x="105" y="653.66666666666663" width="180" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -143,7 +143,7 @@
                             <constraint firstItem="4qH-vT-f0l" firstAttribute="top" secondItem="JPD-wx-mHH" secondAttribute="top" constant="100" id="cma-Ar-PQ2"/>
                             <constraint firstItem="wwd-gq-1pJ" firstAttribute="top" secondItem="4qH-vT-f0l" secondAttribute="bottom" constant="57.5" id="gt8-PF-sIx"/>
                             <constraint firstItem="4qH-vT-f0l" firstAttribute="leading" secondItem="JPD-wx-mHH" secondAttribute="leading" constant="50" id="kwD-KN-QI2"/>
-                            <constraint firstItem="EsM-c0-z4F" firstAttribute="top" secondItem="wwd-gq-1pJ" secondAttribute="bottom" constant="70" id="r3W-N5-Gvs"/>
+                            <constraint firstItem="EsM-c0-z4F" firstAttribute="top" secondItem="wwd-gq-1pJ" secondAttribute="bottom" constant="40" id="r3W-N5-Gvs"/>
                         </constraints>
                     </view>
                     <connections>
