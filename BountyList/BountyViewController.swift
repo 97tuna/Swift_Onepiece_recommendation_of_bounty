@@ -37,6 +37,7 @@ class BountyViewController: UIViewController, UICollectionViewDataSource, UIColl
         if segue.identifier == "showDetail" {
             let vc = segue.destination as? DetailViewController
             if let index = sender as? Int {
+
                 let bountyInfo = viewModel.bountyInfo(at: index)
                 vc?.viewModel.update(model: bountyInfo)
             }
@@ -56,10 +57,10 @@ class BountyViewController: UIViewController, UICollectionViewDataSource, UIColl
 //     셀은 어떻게 표현할까요?
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as? GridCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as? GridCell else { return UICollectionViewCell() }
        
         let info = viewModel.bountyInfo(at: indexPath.row)
-        cell.update(info: info)
+        cell.updateUI(info)
         return cell
     }
     
@@ -120,9 +121,9 @@ class GridCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
     
-    func update(info: BountyInfo) {
-        imgView.image = info.image
-        nameLabel.text = info.name
-        bountyLabel.text = "\(info.bounty)"
+    func updateUI(_ bountyInfo: BountyInfo) {
+        imgView.image = bountyInfo.image
+        nameLabel.text = bountyInfo.name
+        bountyLabel.text = "\(bountyInfo.bounty)"
     }
 }
