@@ -15,21 +15,21 @@ class BountyViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     let viewModel = BountyViewModel()
     
-    // MVVM
-    
-    // Model
-    // - BountyInfo
-    // > BountyInfo 만들자
-    
-    // View
-    // - ListCell 만들기
-    // > ListCell 필요한 정보를 ViewModel한테서 받아야겠다
-    // > ListCell은 ViewModel로 부터 받은 정보로 뷰 업데이트 하기
-    
-    // ViewModel
-    // - BountyViewModel
-    // > BountyViewModel을 만들고, ViewLayer에서 필요한 메서드 만들기
-    // > Model을 가지고 있어야함, BountyInfo 들
+//     MVVM
+//    
+//     Model
+//     - BountyInfo
+//     > BountyInfo 만들자
+//    
+//     View
+//     - ListCell 만들기
+//     > ListCell 필요한 정보를 ViewModel한테서 받아야겠다
+//     > ListCell은 ViewModel로 부터 받은 정보로 뷰 업데이트 하기
+//    
+//     ViewModel
+//     - BountyViewModel
+//     > BountyViewModel을 만들고, ViewLayer에서 필요한 메서드 만들기
+//     > Model을 가지고 있어야함, BountyInfo 들
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
